@@ -95,13 +95,25 @@ export default function EmailGenerator() {
     }
   };
 
+  // const openGmail = () => {
+  //   if (!recipientEmail.trim() || !generatedEmail) return;
+
+  //   const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipientEmail)}&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(generatedEmail)}`;
+
+  //   window.open(gmailUrl, '_blank');
+  // };
+
   const openGmail = () => {
     if (!recipientEmail.trim() || !generatedEmail) return;
 
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipientEmail)}&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(generatedEmail)}`;
+    const subject = encodeURIComponent(emailSubject);
+    const body = encodeURIComponent(generatedEmail);
 
-    window.open(gmailUrl, '_blank');
+    const mailtoUrl = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+
+    window.location.href = mailtoUrl; // opens Gmail app on Android
   };
+
 
   return (
     <div className="min-h-screen bg-white">

@@ -37,7 +37,7 @@ export default function EmailGenerator() {
     setError('');
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_BACKEND_SERVER}/api/email`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_SERVER}/api/email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

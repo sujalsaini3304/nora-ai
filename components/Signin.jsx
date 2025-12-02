@@ -16,6 +16,7 @@ const Signin = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+
   // Redirect if user is already logged in
   useEffect(() => {
     // Only redirect if user exists AND we're not in the middle of a signup flow
